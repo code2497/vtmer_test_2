@@ -1,0 +1,258 @@
+body{
+    background-color: rgb(244, 244, 244);
+    position: relative;
+}
+
+.header{
+    width: 100%;
+    position: relative;
+}
+
+.header .content{
+    width: 1160px;
+    position: relative;
+    height: 100%;
+}
+
+@media screen and (max-width : 1160px){
+    .header .content{
+        width: 100%;
+    }
+}
+
+.header .searchBox{
+    right: 0;
+}
+
+/* banner */
+.showing{
+    position: relative;
+    overflow: hidden;
+    height: 228px;
+    /* overflow: hidden; */
+}
+
+.showing .rollContent{
+    width: 25%;
+    height: 100%;
+    background-size: cover;
+}
+
+.rolling{
+    height: 100%;
+    width: 400%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* 圆形按钮 */
+.showing .rounds{
+    width: 159px;
+    bottom: 6px;
+}
+
+.showing .rounds a{
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-color: rgb(77, 73, 71);
+    box-shadow: -1px -1px #71706f;
+}
+
+.showing .rounds .active{
+    background-color: #d9d2cf;
+    box-shadow: -1px -1px #71706f;
+}
+
+/* banner1 */
+.banner1{
+    padding: 53px 0;
+    box-sizing: border-box;
+    background: url(../../globe_images/bannerbg.png) center no-repeat;
+}
+
+.banner1 .main{
+    width: 220px;
+    margin: 0 auto;
+}
+
+.banner1 a{
+    width: 69px;
+    height: 69px;
+    background: url(../images/books.png) center no-repeat;
+    margin: 0 auto;
+    margin-bottom: 27px;
+}
+
+.banner1 h2{
+    margin: 0 auto;
+    font-size: 27px;
+    width: 220px;
+    line-height: 27px;
+    text-align: center;
+}
+
+/* banner2 */
+.banner2{
+    background: url(../images/banner2.png) center no-repeat;
+    box-sizing: border-box;
+    padding: 53px 0;
+}
+
+
+
+.banner2 a,
+.banner2 img{
+    width: 223px;
+    height: 124px;
+}
+
+/* banner3 */
+.banner3{
+    background: url(../../globe_images/bannerbg.png) center no-repeat;
+}
+
+.banner3 .main{
+    width: 1069px;
+    height: 100%;
+    background: url(../images/banner3.png) center no-repeat;
+    margin: 0 auto;
+    padding: 55px 0;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width : 1069px){
+    .banner3 .main{
+        width: 100% !important;
+    }
+
+    .banner3 .main .text{
+        width: 80% !important;
+    }
+}
+
+.banner3 .main .text{
+    width: 927px;
+    height: 110px;
+    margin: 0 auto;
+    background-color: rgb(240, 240, 240);
+    border: 4px solid rgb(77, 73, 71);
+    box-shadow: inset 0 0 #060001;
+}
+
+.banner3 .main h3{
+    position: relative;
+    width: 100px;
+    height: 26px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 26px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.banner3 .main h3::before{
+    width: 8px;
+    height: 12px;
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    border-left: 2px solid rgb(10, 9, 9);
+    border-top: 2px solid rgb(10, 9, 9);
+}
+
+.banner3 .main h3::after{
+    width: 8px;
+    height: 12px;
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    box-sizing: border-box;
+    border-right: 2px solid rgb(10, 9, 9);
+    border-bottom: 2px solid rgb(10, 9, 9);
+}
+
+.banner3 .main h4{
+    text-align: center;
+    font-size: 24px;
+    line-height: 24px;
+    margin-top: 25px;
+}
+
+/* 主体内容 */
+.mainbg{
+    position: relative;
+}
+
+.body{
+    width: 71.56vw;
+    padding-top: 54px;
+    font-size: 14px;
+    position: relative;
+}
+.body .classNav span{
+    line-height: 14px;
+    color: rgb(130, 130, 130);
+}
+
+.body .classNav li{
+    margin: 0 15px;
+    line-height: 14px;
+    text-align: center;
+    cursor: pointer;
+    color: rgb(41, 41, 41);
+}
+
+.body .classNav li:hover{
+    color : rgb(235, 161, 85);
+}
+
+.body .classNav .active{
+    color: rgb(235, 161, 85);
+}
+
+.classNav .line{
+    width: 100%;
+    height: 2px;
+    background-color: rgb(232, 232, 232);
+    margin: 18px 0 34px 0;
+}
+
+.main .show .block{
+    height: 506px;
+}
+
+
+.main .changePage{
+    padding-bottom: 200px;
+    padding-top: 50px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width : 1363px){
+    .main .show{
+        height: auto;
+    }
+    .main .show .block{
+        height: 467px;
+    }
+    
+}
+
+@media screen and (max-width : 670px){
+    .show .null{
+        display: none;
+    }
+    .main .show{
+        justify-content: center;
+    }
+}
+
+

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>推书-推你所想</title>
+    <link rel="stylesheet" href="../globe_css/reset.css">
+    <link rel="stylesheet" href="../globe_css/style.css">
+    <link rel="stylesheet" href="../globe_font/font.css">
+    <link rel="stylesheet" href="css/classPage.css">
+    <link rel="shortcut icon" href="../favicon.ico" >
+</head>
+
+<body>
+
+    
+
+        <!-- loading -->
+        <div class="loading" style="display: none; position: absolute;">
+            <div class="content" style="top:300px;">
+                <p>Loading</p>
+                <div class="round">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- banner及顶部菜单 -->
+        <div class="upper">
+            <!-- 顶部导航栏 -->
+            <div class="header hnav">
+                <div class="content layout clearfix">
+
+                    <!-- logo -->
+                    <h1 class="logo fl hcenter"><a href="../index.html" style="height: 100%;">推书</a></h1>
+
+                    <!-- 中间搜索 -->
+                    <div class="searchBox layout hcenter">
+                        <input type="text" class="searchContent" name="search" onfocus="holderChange(`onfocus`, this);"
+                            onblur="holderChange(`onbulr`, this);">
+                        <span class="placeholder">请搜索</span>
+                        <input type="button" class="submit">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- banner轮播 -->
+            <div class="showing">
+                <!-- 滚动部分 -->
+                <div class="rolling clearfix" style="transition: left 0.3s;">
+                    <!-- banner1 -->
+                    <div class="banner1 rollContent fl">
+                        <div class="main">
+                            <a href="../index.html" class="books"></a>
+                            <h2>推书，推你所想</h2>
+                        </div>
+                    </div>
+
+                    <!-- banner2 -->
+                    <div class="banner2 rollContent fl">
+                        <a href="../index.html" class="layout"><img src="../globe_images/logo.png" alt=""></a>
+                    </div>
+
+                    <!-- banner3 -->
+                    <div class="banner3 rollContent fl">
+                        <div class="main">
+                            <div class="text">
+                                <h3>今日推荐</h3>
+                                <h4>震惊！维生数前端居然是这样考核</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- banner1 -->
+                    <div class="banner1 rollContent fl">
+                        <div class="main">
+                            <a href="../index.html" class="books"></a>
+                            <h2>推书，推你所想</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 切换按钮 -->
+                <div class="rounds clearfix wcenter">
+                    <a href="javascript:;" class="fl active"></a>
+                    <a href="javascript:;" class="wcenter"></a>
+                    <a href="javascript:;" class="fr"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主体内容 -->
+        <div class="mainbg">
+            <!-- 详情页 -->
+            <div class="details" style="display: none; opacity: 0;  overflow: hidden;">
+                
+                <div class="content wcenter" style="display: none; width: 110px; max-height:400px; overflow: hidden;">
+                    
+                    <div class="close">
+                        <img src="../globe_images/close.png" alt="">
+                    </div>
+                    <div class="inner layout">
+                        <div class="outline clearfix" style="overflow: hidden; white-space: nowrap; width: 772px;">
+                            <img src="../globe_images/bookcover.png" alt="" class="cover fl">
+                            <div class="basedata fr">
+                                <h3>书名</h3>
+                                <!-- 作者 出版社 -->
+                                <ul>
+                                    <li class="writer">
+                                        <span class="icon"></span> | <span class="text">作者</span>
+                                    </li>
+                                    <li class="press">
+                                        <span class="icon"></span> | <span class="text">出版社</span>
+                                    </li>
+                                </ul>
+                                <!--  时间 藏书信息  -->
+                                <ul>
+                                    <li class="time">
+                                        <span class="icon"></span> | <span class="text">出版时间</span>
+                                    </li>
+                                    <li class="lib clearfix">
+                                        <div class="fl">
+                                            <span class="icon"></span> | <span class="libtitle text">图书馆藏书：</span>
+                                        </div>
+                                        <div class="fl textBox">
+                                            <div class="text">x本</div>
+                                            <div class="text">x楼x架</div>
+                                        </div>
+                                        
+                                    </li>
+                                </ul>
+
+                                <!-- 充钱，网上购书 -->
+                                <ul class="moneymoney">
+                                    <li class="kejin clearfix icons">
+                                        <span class="icon"></span>
+                                        | 
+                                    </li>
+
+                                    <li class="buyonline clearfix icons">
+                                        <span class="icon"></span> 
+                                        |
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        
+                            <div class="writerIntro Intro">
+                                <h4>作者简介</h4>
+                                <p class="mt20">
+                                    作者很帅很厉害。作者很帅很厉害。作者很帅很厉害。作者很帅很厉害。作者很帅很厉害。作者很帅很厉害。作者很帅很厉害。作者很帅很厉害。作者很帅很厉害。作者很帅很厉害。作者很帅很厉害。</p>
+                            </div>
+
+                            <div class="bookIntro Intro">
+                                <h4>书籍简介</h4>
+                                <p class="mt20">这本书很好看，真的。这本书很好看，真的。这本书很好看，真的。这本书很好看，真的。这本书很好看，真的。这本书很好看，真的。这本书很好看，真的。这本书很好看，真的。这本书很好看，真的。这本书很好看，真的。</p>
+                            </div>
+
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="body layout">
+
+                <!-- 分类导航栏 -->
+                <div class="classNav">
+                    <div class="nav clearfix">
+                        <span class="head fl">分类：</span>
+                        <ul class="fl">
+                            <li class="fl">哲学</li>
+                            <li class="fl">开车</li>
+                            <li class="fl">量子</li>
+                            <li class="fl">魔法</li>
+                        </ul>
+                    </div>
+                    <div class="line"></div>
+                </div>
+
+                <!-- 主体书展示模块 -->
+                <div class="main">
+                    <!-- 展示区域 -->
+                    <div class="show layout">
+                        <div class="block">
+                            <a href="javascript:;" class="cover"><img src="../globe_images/cover.png" alt=""></a>
+                            <div class="starBox">
+                                <ul class="clearfix">
+                                    <div class="scores">
+                                        <ul class="clearfix"
+                                            style="width: 86.4px; text-overflow: clip; overflow: hidden; white-space: nowrap;">
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                        </ul>
+                                    </div>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                </ul>
+                            </div>
+                            <h2>书名</h2>
+                            <h3>作者</h3>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="block">
+                            <a href="javascript:;" class="cover"><img src="../globe_images/cover.png" alt=""></a>
+                            <div class="starBox">
+                                <ul class="clearfix">
+                                    <div class="scores">
+                                        <ul class="clearfix"
+                                            style="width: 86.4px; text-overflow: clip; overflow: hidden; white-space: nowrap;">
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                        </ul>
+                                    </div>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                </ul>
+                            </div>
+                            <h2>书名</h2>
+                            <h3>作者</h3>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="block">
+                            <a href="javascript:;" class="cover"><img src="../globe_images/cover.png" alt=""></a>
+                            <div class="starBox">
+                                <ul class="clearfix">
+                                    <div class="scores">
+                                        <ul class="clearfix"
+                                            style="width: 86.4px; text-overflow: clip; overflow: hidden; white-space: nowrap;">
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                        </ul>
+                                    </div>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                </ul>
+                            </div>
+                            <h2>书名</h2>
+                            <h3>作者</h3>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="block">
+                            <a href="javascript:;" class="cover"><img src="../globe_images/cover.png" alt=""></a>
+                            <div class="starBox">
+                                <ul class="clearfix">
+                                    <div class="scores">
+                                        <ul class="clearfix"
+                                            style="width: 86.4px; text-overflow: clip; overflow: hidden; white-space: nowrap;">
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                        </ul>
+                                    </div>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                </ul>
+                            </div>
+                            <h2>书名</h2>
+                            <h3>作者</h3>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="block">
+                            <a href="javascript:;" class="cover"><img src="../globe_images/cover.png" alt=""></a>
+                            <div class="starBox">
+                                <ul class="clearfix">
+                                    <div class="scores">
+                                        <ul class="clearfix"
+                                            style="width: 86.4px; text-overflow: clip; overflow: hidden; white-space: nowrap;">
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                        </ul>
+                                    </div>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                </ul>
+                            </div>
+                            <h2>书名</h2>
+                            <h3>作者</h3>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="block">
+                            <a href="javascript:;" class="cover"><img src="../globe_images/cover.png" alt=""></a>
+                            <div class="starBox">
+                                <ul class="clearfix">
+                                    <div class="scores">
+                                        <ul class="clearfix"
+                                            style="width: 86.4px; text-overflow: clip; overflow: hidden; white-space: nowrap;">
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                        </ul>
+                                    </div>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                </ul>
+                            </div>
+                            <h2>书名</h2>
+                            <h3>作者</h3>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="block">
+                            <a href="javascript:;" class="cover"><img src="../globe_images/cover.png" alt=""></a>
+                            <div class="starBox">
+                                <ul class="clearfix">
+                                    <div class="scores">
+                                        <ul class="clearfix"
+                                            style="width: 86.4px; text-overflow: clip; overflow: hidden; white-space: nowrap;">
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                        </ul>
+                                    </div>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                </ul>
+                            </div>
+                            <h2>书名</h2>
+                            <h3>作者</h3>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="block">
+                            <a href="javascript:;" class="cover"><img src="../globe_images/cover.png" alt=""></a>
+                            <div class="starBox">
+                                <ul class="clearfix">
+                                    <div class="scores">
+                                        <ul class="clearfix"
+                                            style="width: 86.4px; text-overflow: clip; overflow: hidden; white-space: nowrap;">
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                            <li class="star iconfont"></li>
+                                        </ul>
+                                    </div>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                    <li class="star iconfont fl"></li>
+                                </ul>
+                            </div>
+                            <h2>书名</h2>
+                            <h3>作者</h3>
+                            <div class="line"></div>
+                        </div>
+                        
+
+                        
+
+                        <!-- 第一页 -->
+                    </div>
+
+                    <!-- 滚动条式下一页 -->
+                    <div class="scroNext">
+                        下一页
+                    </div>
+
+                    <!-- 页脚页面切换 -->
+                    <div class="changePage">
+                        <div class="number">
+                            <button class="left iconfont"></button>
+                            <ul>
+                                
+                            </ul>
+                            <button class="right iconfont"></button>
+                        </div>
+                        <div class="total"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+
+    
+
+    
+
+
+    <script src="../globe_js/tools.js"></script>
+    <script src="../globe_js/jquery-3.4.1.js"></script>
+    <script src="../globe_js/mock.js"></script>
+    <script src="../globe_js/book-mock.js"></script>
+    <script src="../globe_js/BlockModule.js"></script>
+    <script src="../globe_js/books.js"></script>
+    <script src="../globe_js/classBooks.js"></script>
+    <script src="js/main.js" ></script>
+</body>
+
+</html>

@@ -1,0 +1,391 @@
+/* 主页 */
+.main{
+    width: 100%;
+    height: 1026px;
+    background: url(../images/bg.png) no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+
+/* 用户 */
+.main .user{
+    
+    height: 42px;
+    margin-top: 52px;
+    margin-right: 66px;
+}
+
+.main .logout{
+    margin-left: 10px;
+    float: right;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+.main .logout:hover{
+    text-decoration: underline !important;
+}
+
+.main .user a,
+.main .user img
+{
+    display: block;
+    height: 100%;
+    font-size: 23px;
+    color: rgb(114, 116, 121);
+    text-decoration: underline;
+}
+
+/* 中间主体 */
+
+.main .centerBOX{
+    position: absolute;
+    top: 310px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+}
+
+/* logo */
+.main .centerBOX .logo a{
+    
+    width: 336px;
+    height: 194px;
+    background-image: url(../images/logo.png);
+    background-size: 100% 100%;
+    font-size: 0;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 0.72vw;
+    
+}
+
+.centerBOX .logo span{
+    color: rgb(141, 138, 133);
+    font-size: 24px;
+}
+
+/* 搜索栏 */
+.searchBox{
+    margin: 0 auto;
+    margin-top: 2.5vw;
+    position: relative;
+    
+    width: 30.55vw;
+    min-width: 336px;
+    min-height: 30px;
+    
+}
+
+.searchBox .placeholder{
+    position: absolute;
+    top: 50%;
+    left: 2.7vw;
+    z-index: 0;
+    font-size: 23px;
+    transform: translateY(-50%);
+    
+}
+
+.searchBox .searchContent{
+    font-size: 1.97vw;
+    color: rgb(77, 79, 85);
+    height: 3.16vw;
+	border-radius: 1.58vw;
+	background-color: #fff;
+    min-width: 336px;
+    min-height: 32px;
+
+}
+
+.searchBox .searchContent input:nth-of-type(1){
+    text-indent: 2.7vw;
+    height: 100%;
+    line-height: 100%;
+    font-size: 1.65vw;
+    padding: 0;
+    width: 85%;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.searchBox  .submitBtn{
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 13px;
+    height: 2.11vw;
+    width: 2.11vw;
+    background-color: transparent;
+    background: url(../images/search.png) no-repeat center;
+    background-size: 2.11vw 2.11vw;
+    z-index: 1;
+    cursor: pointer;
+    
+}
+  
+
+.centerBOX .category{
+    margin: 0 auto;
+    margin-top: 2.44vw;
+    width: 22.58vw;
+    min-width: 246px;
+}
+
+.centerBOX .category ul{
+    display: flex;
+    width: 22.58vw;
+    min-width: 246px;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.centerBOX .category li a{
+    color: inherit;
+    height: 100%;
+    line-height: 25px;
+    text-align: center;
+}
+.centerBOX .category li{
+    height: 29px;
+    width: 80px;
+    background-color: rgb(240, 241, 242);
+    border-radius: 41px;
+    border: 2px solid rgb(180, 179, 179);
+    font-size: 19px;
+    transition: background-color 0.3s;
+    text-align: center;
+    color: #444;
+    box-sizing: border-box;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 1260px) {
+    .centerBOX .category li,
+    .searchBox .searchContent input:nth-of-type(1),
+    .searchBox .placeholder{
+        font-size: 16px;
+    }
+}
+
+.centerBOX .category li:hover{
+    
+    color: #fff;
+    background-color: rgb(141, 144, 144);
+}
+  
+/* 登录页面 */
+.loginPage{
+    
+    position: absolute;
+    z-index: 100;
+    top: 214px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 775px;
+    height: 531px;
+    background-color: rgba(239, 243, 246, 0.9);
+    border: 2px solid rgba(77, 73, 71, 0.9);
+}
+
+.loginPage .content{
+    width: 458px;
+}
+
+.loginPage .logo{
+    height: 98px;
+    width: 183px;
+    margin-top: 46px;
+    margin-bottom: 59px;
+}
+
+.loginPage .logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.loginPage .userInfo{
+    width: 458px;
+}
+
+.loginPage .placeholder{
+    position: absolute;
+    z-index: 1;
+    left: 136px;
+    top: 0;
+}
+
+.loginPage .userInfo .IDBOX{
+    margin-bottom: 60px;
+}
+
+.loginPage .userInfo .pwdBOX{
+    margin-bottom: 40px;
+}
+
+.loginPage .userInfo span{
+    font-size: 28px;
+    color: #4d4f55;
+    line-height: 48px;
+    display: block;
+    float: left;
+    margin-right: 35px;
+}
+
+.loginPage .userInfo form{
+    position: relative;
+}
+
+.loginPage .userInfo .inputbox{
+    border-radius: 24px;
+    background-color: #fff;
+    display: inline-block;
+    position: relative;
+    
+}
+
+.loginPage .userInfo .placeholder{
+    position: absolute;
+    top: 0;
+    left: 33px;
+    z-index: 0;
+}
+
+.loginPage .userInfo .input{
+    width: 339px;
+    height: 48px;
+    border-radius: 24px;
+    text-indent: 33px;
+    font-size: 23px;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.loginPage .loginbtn{
+    width: 121px;
+	height: 48px;
+	border-radius: 24px;
+	background-color: #eff3f6;
+	box-shadow: 4px 5px 12px 1px rgba(0,0,0,.11), inset -3px -2px 8px rgba(0,0,0,.31);
+    border: solid 1px #a4a5a6;
+    display: block;
+    cursor: pointer;
+    font-size: 23px;
+    color: #727479;
+    transition: box-shadow 0.1s ;
+    transition: background-color 0.1s;
+}
+
+.loginPage .loginbtn:active{
+    background-color: rgb(207,209,211);
+    box-shadow: 4px 5px 12px 1px rgba(0,0,0,.1), inset -3px -2px 8px rgba(0,0,0,.3);
+    color: #fff;
+}
+
+.loginPage .userInfo a{
+    position: absolute;
+    bottom: 13px;
+    right: 0;
+    font-size: 23px;
+    text-decoration: underline;
+}
+
+/* 关闭按钮 */
+
+.loginPage .close{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 24px;
+    top: 24px;
+}
+
+.loginPage .close img{
+    width: 100%;
+    height: 100%;
+}
+
+/* loading */
+.loading{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1000;
+    background-color: rgba(214, 210, 210, 0.85);
+}
+
+.loading .content{
+    width: 206px;
+    height: 94px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading p{
+    text-align: center;
+    font-size: 40px;
+    top: 464px;
+}
+
+
+.loading .round{
+    width: 206px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 21px;
+}
+
+.loading .round span{
+    width: 26px;
+    height: 26px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.loading .round span:nth-of-type(1){
+    animation-delay: 0s;
+}
+
+.loading .round span:nth-of-type(2){
+    animation-delay: 0.3s;
+}
+
+.loading .round span:nth-of-type(3){
+    animation-delay: 0.6s;
+}
+
+.loginPage .warn{
+   text-align: center;
+   font-size: 18px;
+   margin-bottom: 5px;
+   color: #ca0c16;
+   visibility: hidden;
+   
+}
+
+
+.loginPage .warn p{
+    font-size: 30px;
+}
+
+@keyframes loading{
+    0%{
+        background-color: #fff;
+    }
+    50%{
+        background-color: #000;
+    }
+    100%{
+        background-color: #fff;
+    }
+}

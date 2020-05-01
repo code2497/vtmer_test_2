@@ -1,0 +1,569 @@
+/* html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+} */
+
+/* 阴影输入框 */
+.input{
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	width: 100%;
+    /* height: 3.16vw; */
+    border: 1px solid rgb(218, 218, 218);
+	/* border-radius: 1.58vw; */
+	background-color: #fff;
+    box-shadow: 4px 5px 12px 1px rgba(0,0,0,0.1);
+}
+
+/* 公用顶部导航 */
+.hnav
+{
+	height: 64px;
+	background-color: #fff;
+	box-shadow: 6px 2px 7px rgba(0,0,0,.33);
+}
+
+.header .logo{
+    background: url(../globe_images/small-logo.png) no-repeat center;
+    font-size: 0;
+    width: 85px;
+    height: 42px;
+    background-size: 85px 42px;
+}
+
+/* 公用顶部搜索框 */
+.header .searchBox{
+    width: 309px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: #fcfcfc;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.header .searchBox span{
+    color: rgb(143, 143, 143);
+    font-size: 17px;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 100%;
+    line-height: 30px;
+}
+
+.header .searchBox .searchContent{
+    width: 87%;
+    height: 100%;
+    background-color: transparent;
+    text-indent: 20px;
+    font-size: 20px;
+}
+
+.header .searchBox .submit{
+    cursor: pointer;
+    background-color: transparent;
+    width: 13%;
+    height: 100%;
+    float: right;
+    border-radius: 0 16px 16px 0;
+    background: url(../globe_images/search.png) no-repeat 0 50%;
+    background-size: 21px 21px;
+}
+
+/* 公用banner背景 */
+.bannerbg{
+    background: url(../globe_images/bannerbg.png) no-repeat center;
+    width: 100%;
+    height: 231px;
+    position: relative;
+    background-size: cover;
+}
+
+
+/* 公用展示书单元 */
+.main .show{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 986px;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1100px;
+}
+
+
+.main .show .block{
+    width: 240px;
+    height: 447px;
+    margin-bottom: 40px;
+}
+
+.show .block a,
+.show .block img{
+    width: 241px;
+    height: 331px;
+}
+
+/* 评分相关 */
+.show .block .starBox{
+    padding: 20px 0;
+}
+
+.show .block .starBox .scores{
+    position: absolute;
+    z-index: 1;
+    height: 18px;
+    width: 24px;
+}
+
+
+
+.show .starBox .scores .star::before{
+    content: '\e642';
+    text-overflow: clip;
+}
+
+.show .block .starBox li{
+    display: inline-block;
+    
+}
+
+.show .block .starBox ul{
+    position: relative;
+    width: 120px;
+    margin: 0 auto;
+    font-size: 0;
+}
+
+
+
+.show .block h2,
+.show .block h3{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 16px;
+}
+
+.show .block .line{
+    width: 129px;
+    height: 2px;
+    background-color: rgb(230, 230, 230);
+    margin: 0 auto;
+}
+
+.show .block h3{
+    margin: 12px 0;
+}
+
+.show .block .star::before{
+    content: '\e617';
+    font-size: 16px;
+    margin: 0 4px;
+    
+}
+
+.show .null{
+    visibility: hidden;
+}
+
+.main .scroNext{
+    width: 100%;
+    height: 40px;
+    background-color: #f2f2f2;
+    color: #333;
+    border: 1px solid rgb(194,213,227);
+    margin-top: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.main .scroNext:hover {
+    color: #5CAAEF;
+}
+
+.main .changePage{
+    /* width: 164px; */
+    bottom: 37px;
+    margin: 0 auto;
+    margin-top: 73px;
+}
+
+.main .changePage .number{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.main .changePage .point{
+    width: 23px;
+    height: 23px;
+    font-size: 19px;
+    margin: 0 2px;
+    line-height: 23px;
+    cursor: auto;
+}
+
+.main .changePage .point:hover{
+    cursor: auto;
+    background:none;
+    color: #000;
+}
+
+.body .changeLoad{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: #fff;
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+}
+
+.main .changePage li{
+    width: 23px;
+    height: 23px;
+    font-size: 19px;
+    margin: 0 2px;
+    line-height: 23px;
+    text-align: center;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.main .changePage .left::before{
+    content: '\e865';
+    color: #000;
+    font-size: 19px;
+    cursor: pointer;
+    
+}
+
+.main .changePage .right::before{
+    content: '\e866';
+    color: #000;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.main .changePage li:hover{
+    background-color: rgb(68, 68, 68);
+    color: #fff;
+    cursor: pointer;
+}
+
+.main .changePage .total{
+    font-size: 18px;
+    line-height: 18px;
+    margin-top: 10px;
+    text-align: center;
+    color: #040404;
+    
+}
+
+.main .changePage .active{
+    background-color: rgb(68, 68, 68);
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 详情页 */
+.details{
+    position: absolute;
+    z-index: 100;
+    width:100%;
+    height: 130%;
+    background-color: rgba(214, 210, 210, 0.85);
+    transition: opacity 0.5s;
+}
+
+
+.content .close{
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-top: 80px solid rgb(87, 194, 150);
+    border-left: 80px solid transparent;
+}
+
+.content .close img{
+    position: absolute;
+    top: -65px;
+    left: -35px;
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+}
+
+.details .content{
+    width: 1060px;
+    box-shadow: 0 0 9px rgba(0,0,0,0.3);
+    background-color: rgb(250, 250, 250);
+    padding: 130px 84px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.details .content .cover{
+    width: 318px;
+    height: 439px;
+}
+
+
+.details .inner{
+    position: relative;
+    padding: 61px 70px;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+}
+
+.details .content::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 130px;
+    left: 84px;
+    width: 108px;
+    height: 108px;
+    border-top: 2px solid rgb(212, 169, 169);
+    border-left: 2px solid rgb(212, 169, 169);;
+}
+
+.details .content::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 130px;
+    right: 84px;
+    width: 108px;
+    height: 108px;
+    border-right: 2px solid rgb(212, 169, 169);
+    border-bottom: 2px solid rgb(212, 169, 169);;
+}
+
+.details .inner .basedata{
+    width: 350px;
+    
+    margin-top: 40px;
+}
+
+.inner .basedata{
+    position: relative;
+}
+
+.inner .basedata h3{
+    font-size: 33px;
+    /* text-indent: 45px; */
+    white-space: normal;
+    margin-bottom: 23px;
+    text-align: center;
+}
+
+.inner .basedata li{
+    font-size: 21px;
+    line-height: 21px;
+    
+    color: rgb(146, 146, 146);
+}
+
+.inner .basedata li:nth-of-type(2){
+    margin-top: 11px;
+}
+
+.inner .basedata ul:nth-of-type(2){
+    margin-top: 27px;
+}
+
+.inner .basedata .icon{
+    display: inline-block;
+    vertical-align: middle;
+    height: 23px;
+    width: 23px;
+    line-height: 23px;
+    background: url(../globe_images/css_sprites.png);
+}
+
+.inner .basedata .text{
+    font-size: 15px;
+    color: rgb(42, 42, 42);
+}
+
+.details .writer .icon{
+    background-position:-181px -53px;
+}
+
+.details .press .icon{
+    background-position: -54px -120px;
+}
+
+.details .time .icon{
+    
+    background-position: -10px -120px;
+}
+
+.details .lib .icon{
+    background-position: -97px -120px;
+}
+
+.details .basedata .moneymoney{
+    margin-top: 60px;
+}
+
+.basedata .moneymoney a{
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+    background: url(../globe_images/css_sprites.png);
+    vertical-align: middle;
+    margin: 0 8px;
+}
+
+.details .kejin .icon{
+    width: 22px;
+    height: 28px;
+    background-position: -64px -66px;
+}
+
+.details .inner .basedata .buyonline{
+    margin-top: 20px;
+}
+
+.details .buyonline .icon{
+    width: 22px;
+    background-position: -181px -10px;
+}
+
+.basedata .moneymoney .doubanUrl{
+    background-position: -67px -10px;
+}
+
+.basedata .moneymoney .zhihuUrl{
+    background-position: -10px -66px;
+}
+
+.basedata .moneymoney .jDUrl{
+    width: 37px; 
+    height: 36px;
+    background-position: -10px -10px;
+}
+
+.basedata .moneymoney .DangUrl{
+    width: 39px; 
+    height: 27px;
+    background-position: -122px -10px;
+}
+
+.basedata .moneymoney .AmazonUrl{
+    width: 31px;
+    height: 32px;
+    background-position: -122px -57px;
+}
+
+.details .Intro{
+    margin: 41px 0;
+    width: 100%;
+}
+
+.details .Intro h4{
+    font-size: 16px;
+    color: #2a2827;
+    font-weight: bold;
+}
+
+.details .Intro p{
+    text-indent: 3em;
+    font-size: 14px;
+    overflow: hidden;
+    width: 772px;
+}
+
+/* loading */
+.loading{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1000;
+    background-color: rgba(214, 210, 210, 0.85);
+}
+
+.loading .content{
+    width: 206px;
+    height: 94px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading p{
+    text-align: center;
+    font-size: 40px;
+    top: 464px;
+}
+
+
+.loading .round{
+    width: 206px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 21px;
+}
+
+.loading .round span{
+    width: 26px;
+    height: 26px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.loading .round span:nth-of-type(1){
+    animation-delay: 0s;
+}
+
+.loading .round span:nth-of-type(2){
+    animation-delay: 0.3s;
+}
+
+.loading .round span:nth-of-type(3){
+    animation-delay: 0.6s;
+}
+
+.loginPage .warn{
+   text-align: center;
+   font-size: 18px;
+   margin-bottom: 5px;
+   color: #ca0c16;
+   visibility: hidden;
+   
+}
+
+
+.loginPage .warn p{
+    font-size: 30px;
+}
+
+@keyframes loading{
+    0%{
+        background-color: #fff;
+    }
+    50%{
+        background-color: #000;
+    }
+    100%{
+        background-color: #fff;
+    }
+}
