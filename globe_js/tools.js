@@ -206,8 +206,12 @@ function updateQueryString(uri, key, value) {
 
 // search请求
 function getSearchRes(text, loading, href){
+    var dl = 0;
     if(text){
-        loading.style.display = "block";
+        if(loading){
+            loading.style.display = "block";
+            dl = 3000;
+        }
         setTimeout(function (){
             $.ajax({
                 // 向后台请求搜索，搜索逻辑已经写好在这个路由里面
@@ -216,7 +220,9 @@ function getSearchRes(text, loading, href){
                 type : 'post',
                 beforeSend : function (){
                     // 加载
-                    loading.style.display = "block";
+                    if(loading){
+                        loading.style.display = "block";
+                    }
                 },
                 success : function (xhr){ 
                     console.log(xhr);
@@ -225,13 +231,17 @@ function getSearchRes(text, loading, href){
                     sessionStorage.removeItem("books");
                     sessionStorage.setItem("books", datastr);
 
-                    loading.style.display = "none";
-                    window.location.href = `${href}?search=${text}`;
+                    if(loading){
+                        loading.style.display = "none";
+                    }
+                    if(href){
+                        window.location.href = `${href}?search=${text}`;
+                    }
                 },
                 error : function (){
                     alert("error");
                 }
             });
-        }, 3000);
+        }, dl);
     }
 }

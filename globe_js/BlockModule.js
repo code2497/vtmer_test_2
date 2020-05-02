@@ -72,7 +72,9 @@ var blockFunction = {
             if(self.books.index == self.books.pages - 1){
                 this.style.display = "none";
             }
+            //如果是搜索的话，data只是一个数组，如果是分类，内data是一个对象套一个数组（全部分类）再套一个对象再套一个数组
             var info = self.books.class == "s" ?  self.books.data : self.books.data.bookclass[self.books.class].bookInfo;
+            console.log(self.books.data);
             for(let i = self.books.index * 8, j = 0;i < (self.books.index*8) + 8;i ++ , j++){
                 oblock = blockDom.blockCol[0].cloneNode(true);
                 blockDom.blockArea.appendChild(oblock);//复制第一个block，插入后再进行内容修改
@@ -81,7 +83,7 @@ var blockFunction = {
 
             // 隐藏占满一行的null
             var nullDomCol = document.querySelector(".body").getElementsByClassName("null");
-            
+
             if(nullDomCol){
                 if(nullDomCol.length >= 4){
                     //6个 5 4 3 2
@@ -161,9 +163,10 @@ var blockFunction = {
                 return;
             }
             self.books.index++;
+            // 先出现页面更改，再写入block
+            self.pageChangeAct();
             self.blockAreaReset(8);
             self.addBlock(self.books);
-            self.pageChangeAct();
         });
         addEvent(blockDom.prebtn, "click", function (){
             if(self.books.index == 0){
@@ -171,9 +174,10 @@ var blockFunction = {
                 return;
             }
             self.books.index--;
+            
+            self.pageChangeAct();
             self.blockAreaReset(8);
             self.addBlock(self.books);
-            self.pageChangeAct();
         });
     },
     

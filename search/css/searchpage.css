@@ -36,16 +36,15 @@ body{
     overflow: hidden;
 }
 
-.header .cate a{
+.header .cate li{
     font-size: 17px;
-    
     line-height: 40px;
     text-align: center;
     transition: background-color 0.1s;
-    
+    cursor: pointer;
 }
 
-.header .cate a:hover{
+.header .cate li:hover{
     text-decoration: underline;
 }
 

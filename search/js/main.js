@@ -6,7 +6,8 @@ var mainDom = {
     loading : document.querySelector(".loading"),
     cate : document.querySelector(".header").querySelector(".cate"),
     notfind : document.querySelector(".notfind"),
-    title : document.querySelector("title")
+    title : document.querySelector("title"),
+    toClassBtn : document.querySelector(".cate").querySelectorAll("li")
 };
 
 
@@ -14,11 +15,14 @@ var mainFunction = {
     init : function (){
         var self = this;
         self.searchItem.show();
-        self.searchInit();
+        getSearchRes(self.searchItem.text, null, null);
+        
         setTimeout(function (){
+            self.searchInit();
             self.innerSearch();
             self.addMenu();
-        }, 50);
+            self.addClearData();
+        }, 100);
     },
 
     //显示搜索内容
@@ -32,7 +36,7 @@ var mainFunction = {
 
     //拿搜索到的数据
     results : {
-        data : JSON.parse(decodeURIComponent(atob(sessionStorage.getItem("books")))).data,
+        data : sessionStorage.getItem("books") ? JSON.parse(decodeURIComponent(atob(sessionStorage.getItem("books")))).data:"all",
         index : getQueryString("page")?parseInt(getQueryString("page")) : 0,
         class : "s"
     },
@@ -40,24 +44,27 @@ var mainFunction = {
     // 初始化动作，如果搜到就显示结果，没搜到就显示所有数据
     searchInit : function(){
         var self = this;
-        if(self.results.data.length == 0){
+        console.log(self.results);
+        self.results.data = JSON.parse(decodeURIComponent(atob(sessionStorage.getItem("books")))).data;
+        if(self.results.data.length == 0 ){
             //显示的不是self.results.data，而是重新获取后台的数据
-            mainDom.notfind.style.display = "block";
-            $.ajax({
-                data : 0,
-                url : "http://vtmer.cn/search",
-                success : function (xhr){
-                    self.results.data = JSON.parse(xhr).bookclass[0].bookInfo;
-                    blockFunction.addBlock(self.results);
-                    blockFunction.addNextPre();
-                    blockFunction.addPageChange();
-                    blockFunction.addSrcoNext();
-                    blockFunction.addDetails();
-                    blockFunction.addCloseDetails();
-                    console.log(xhr);
-
-                },
-            });
+            self.searchItem.text == "全部内容" ? null : mainDom.notfind.style.display = "block";
+            //如果是all就不执行提示
+                $.ajax({
+                    data : 0,
+                    url : "http://vtmer.cn/search",
+                    success : function (xhr){
+                        self.results.data = JSON.parse(xhr).bookclass[0].bookInfo;
+                        blockFunction.addBlock(self.results);
+                        blockFunction.addNextPre();
+                        blockFunction.addPageChange();
+                        blockFunction.addSrcoNext();
+                        blockFunction.addDetails();
+                        blockFunction.addCloseDetails();
+                        console.log(xhr);
+    
+                    },
+                });
         }else{
             blockFunction.addBlock(self.results);
             blockFunction.addNextPre();
@@ -113,7 +120,20 @@ var mainFunction = {
             });
         });
         
+    },
+
+    // 删除本页ss数据并跳转
+    addClearData : function (){
+        var len = mainDom.toClassBtn.length;
+        for(let i = 0;i < len;i ++){
+            addEvent(mainDom.toClassBtn[i],"click", function(){
+                sessionStorage.removeItem("books");
+                window.location.href = `../classification/classPage.html?class=${i}`;
+            });
+        }
+        
     }
+
 
 };
 

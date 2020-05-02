@@ -7,8 +7,6 @@ var mainDom = {
     searchSub : document.querySelector(".searchBox").querySelector(".submit"),
     inputArea : document.querySelector(".searchBox").querySelector(".searchContent"),
     loading : document.querySelector(".loading"),
-
-    
 };
 
 
@@ -26,6 +24,7 @@ var mainFunction = {
         // 动态写入page
 
 
+        // this.dataFind();
         blockFunction.getBlockData();
         setTimeout(function(){
             blockFunction.addBlock();
@@ -85,11 +84,8 @@ var mainFunction = {
     },
 
 
-    // 数据录入(session里面有数据就直接用，没数据就请求后台)
     dataFind : function (){
-        if(!sessionStorage.getItem("books")){
             blockFunction.getBlockData();
-        }else{
             blockFunction.books = {
                 //拿数据、解密、转码、转化json
                 data : JSON.parse(decodeURIComponent(atob(sessionStorage.getItem("books")))),
@@ -101,7 +97,6 @@ var mainFunction = {
             }
             blockFunction.books.class = Number(blockFunction.books.class) > blockFunction.books.data.bookclass.length ? 0 : blockFunction.books.class;
             blockFunction.classSimu(blockDom.classli);
-        }
     },
 
     //按钮同步

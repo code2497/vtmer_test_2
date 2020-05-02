@@ -178,7 +178,7 @@ let mainFunction = {
     },
 
 
-    // 搜索相关
+    // 转到搜索页
     toSearch : function (){
         var btn = mainDom.searchSub;
         addEvent(btn, "click", function(e){
